@@ -1,23 +1,24 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 class Solution {
-  public String solution(int n, int t, int m, int p) {
-    String answer = "";
+    public String solution(int n, int t, int m, int p) {
+        String answer = "";
+        StringBuilder list = new StringBuilder();
+        for (int i = 0; i < t * m; i++) {
+            list.append(Integer.toString(i, n).toUpperCase());
+        }
 
-    int startNum = 0;
+        for (int i = p-1; i < t*m; i+=m) {
+            if (i % m == p - 1) {
+                answer += list.charAt(i);
 
-    String targetString = new String();
-    String retString = new String();
+            }
+        }
 
-    while (targetString.length() < m * t) {
-        targetString += Integer.toString(startNum++, n);
+        return answer;
     }
-
-    for (int i=0; i<t; i++) {
-        retString += targetString.charAt(p - 1 + i * m);
-    }
-
-      answer = retString.toUpperCase();
-
-
-      return answer;
-  }
 }
