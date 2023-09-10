@@ -9,7 +9,7 @@ class Solution {
 
         for (int i = 0; i < works.length; i++) {
             works[i] = (100 - progresses[i]) / speeds[i];
-            if ((100 - progresses[i]) % speeds[i] != 0){
+            if ((100-progresses[i])%speeds[i] != 0){
                 works[i]  += 1;
             }
         }
